@@ -51,8 +51,8 @@ local function commands(opts, table)
             else
                 tel_win_width = math.floor(cols * width)
             end
-            local cheatcode_width = math.floor(cols * 0.35)
-            local section_width = 20
+            local cheatcode_width = math.floor(cols * 0.05)
+            local section_width = 28
 
             -- NOTE: the width calculating logic is not exact, but approx enough
             local displayer = entry_display.create {
