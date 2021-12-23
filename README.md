@@ -1,6 +1,6 @@
 # telescope-command-palettete.nvim
 
-`telescope-command-palettete.nvim` is a neovim plugin written entirely in lua that will help you to access your custom commands/function/key-bindings easily.
+`telescope-command-palettete.nvim` is a neovim plugin written entirely in lua that will help you to access your custom commands/function/key-bindings.
 
 # Demo
 
@@ -41,6 +41,7 @@ CpMenu = {
         { "reload vimrc", ":source $MYVIMRC"},
     }
 }
+```
 
 ## Per project configurations
 
