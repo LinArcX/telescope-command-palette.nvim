@@ -9,7 +9,7 @@ local entry_display = require('telescope.pickers.entry_display')
 local categories
 CpMenu = {}
 
-function themes.command_palette(opts)
+function themes.vscode(opts)
   opts = opts or {}
   local theme_opts = {
     theme = "dropdown",
@@ -114,7 +114,7 @@ local function commands(opts, table)
     sorter = conf.generic_sorter(opts),
     attach_mappings = function(prompt_bufnr, map)
       map("i", "<C-b>", function(bufnr)
-                          categories(require("telescope.themes").command_palette{})
+                          categories(require("telescope.themes").vscode{})
                         end)
       actions.select_default:replace(function()
         actions.close(prompt_bufnr)
@@ -152,9 +152,13 @@ categories = function(opts)
   }):find()
 end
 
+local function run()
+  categories(require("telescope.themes").vscode{})
+end
+
 return require('telescope').register_extension {
   exports = {
     -- Default when to argument is given, i.e. :Telescope command_palette
-    command_palette = categories(require("telescope.themes").command_palette{}),
+    command_palette = run,
   }
 }
