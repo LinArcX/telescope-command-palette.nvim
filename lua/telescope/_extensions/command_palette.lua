@@ -106,7 +106,8 @@ local function categories(opts)
     sorter = conf.generic_sorter(opts),
     attach_mappings = function(prompt_bufnr, map)
       actions.select_default:replace(function()
-        actions.close(prompt_bufnr)
+        -- Due to issue: 1599, we shouldn't close prompt_bufnr here.
+        -- actions.close(prompt_bufnr)
         local selection = action_state.get_selected_entry()
         commands(opts, listOfCommands(selection.index))
       end)

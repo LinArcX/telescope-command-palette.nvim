@@ -45,7 +45,7 @@ CpMenu = {
 
 ## Per project configurations
 
-If you're working on different projects and want to have special keys per project, you can create .nvimrc in root of your project and append items to `CpMenu` like this:
+If you're working on different projects and want to have special keys per project, you can create a `.nvimrc` in root of your project and append items to `CpMenu` like this:
 
 ```lua
 table.insert(CpMenu,
@@ -67,4 +67,4 @@ table.insert(CpMenu,
 ```
 
 # Usage
-Just run: `:Telescope command_palette`.
+`:Telescope command_palette`.
