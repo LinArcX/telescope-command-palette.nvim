@@ -121,7 +121,7 @@ local function commands(opts, table)
                         end)
       actions.select_default:replace(function()
         actions.close(prompt_bufnr)
-        -- temporarily workaround for issue: 1599.
+        -- temporarily workaround for telescope issue: 1599.
         local selection = action_state.get_selected_entry()
         if selection.value[3] == 1 then
             vim.schedule(function() vim.cmd "startinsert! " end)
@@ -144,7 +144,7 @@ categories = function(opts)
     attach_mappings = function(prompt_bufnr, map)
       actions.select_default:replace(function()
         actions.close(prompt_bufnr)
-        -- temporarily workaround for issue: 1599.
+        -- temporarily workaround for telescope issue: 1599.
         vim.schedule(function() vim.cmd "startinsert! " end)
         local selection = action_state.get_selected_entry()
         opts.commands_title = selection[1]
