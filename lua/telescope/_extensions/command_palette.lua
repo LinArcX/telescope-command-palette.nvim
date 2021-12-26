@@ -7,7 +7,7 @@ local action_state = require "telescope.actions.state"
 local entry_display = require('telescope.pickers.entry_display')
 
 local categories
-CpMenu = {}
+CpMenu = CpMenu or {}
 
 function themes.vscode(opts)
   opts = opts or {}
