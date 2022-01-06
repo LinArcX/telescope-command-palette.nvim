@@ -7,7 +7,12 @@ local action_state = require "telescope.actions.state"
 local entry_display = require('telescope.pickers.entry_display')
 
 local categories
-CpMenu = CpMenu or {}
+local CpMenu = require('command_palette').CpMenu
+
+local function setup(cpMenu)
+  require('command_palette').CpMenu = cpMenu or {}
+  CpMenu = require('command_palette').CpMenu
+end
 
 function themes.vscode(opts)
   opts = opts or {}
@@ -160,6 +165,7 @@ local function run()
 end
 
 return require('telescope').register_extension {
+  setup = setup,
   exports = {
     -- Default when to argument is given, i.e. :Telescope command_palette
     command_palette = run,
