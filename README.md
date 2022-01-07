@@ -4,7 +4,7 @@
 
 # Demo
 
-![Demo](./command_palette.gif)
+![Demo](https://user-images.githubusercontent.com/10884422/148601223-5ade5806-9935-4ff7-888c-d00b41178a96.gif)
 
 
 # Installation
@@ -132,9 +132,11 @@ table.insert(require('command_palette').CpMenu,
 # Usage
 `:Telescope command_palette`.
 
-# TODO
-- [] let users chose separator icon.
-- [] maybe restructure the project?
-- [] show frequently commands based on frecency algorithm.
-- [] when come back to categories, remember the selected item.
-- [] add options to be like vscode command-palatte. (like: @, ...)
+# Roadmap :blue_car:
+- [ ] use modules and __setup__ function. :heavy_check_mark: (Thanks to: [mrjones2014](https://github.com/mrjones2014))
+- [ ] let users chose the __separator__ icon.
+- [ ] make categories per os/distro.
+- [ ] allow users to define keybindings for items in categories/commands.
+- [ ] remember the selected item in come back to categories.
+- [ ] show frequently commands based on frecency algorithm.
+- [ ] add options to make telescope-command-palette.nvim more like vscode command-palatte. (like: @, ...)
