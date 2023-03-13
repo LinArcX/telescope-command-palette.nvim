@@ -5,6 +5,7 @@ local actions = require("telescope.actions")
 local action_state = require("telescope.actions.state")
 local entry_display = require("telescope.pickers.entry_display")
 local conf = require("telescope.config").values
+local resolve = require "telescope.config.resolve"
 
 local categories
 local CpMenu = require("command_palette").CpMenu
@@ -76,16 +77,13 @@ local function commands(opts, table)
     finder = finders.new_table({
       results = table,
       entry_maker = function(entry)
-        local cols = vim.o.columns
-        local width = conf.width or conf.layout_config.width or conf.layout_config[conf.layout_strategy].width or cols
-        local tel_win_width
-        -- width = 80 -> column width, width = 0.7 -> ratio
-        if width > 1 then
-          tel_win_width = width
-        else
-          tel_win_width = math.floor(cols * width)
-        end
-        local desc_width = math.floor(cols * 0.05)
+        local results_win = vim.api.nvim_get_current_win()
+        local w = vim.api.nvim_win_get_width(results_win)
+        local h = vim.api.nvim_win_get_height(results_win)
+        local width = conf.width or conf.layout_config.width or
+            conf.layout_config[conf.layout_strategy].width or vim.o.columns
+        local tel_win_width = resolve.resolve_width(width)(nil, w, h) - #conf.selection_caret
+        local desc_width = math.floor(tel_win_width * 0.05)
         local command_width = 28
 
         -- NOTE: the width calculating logic is not exact, but approx enough
