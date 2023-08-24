@@ -1,3 +1,8 @@
+# ARCHIVED
+I won't develop this plugin anymore since I found which-key far better than mine:
+https://github.com/folke/which-key.nvim
+
+
 # :telescope: telescope-command-palette.nvim
 
 `telescope-command-palette.nvim` is a neovim plugin written entirely in lua that will help you to access your custom commands/function/key-bindings.
